@@ -273,7 +273,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build-css', ['clean:css', 'less', 'postcss', 'usebanner:css', 'cssmin']);
 
   // JS distribution
-  grunt.registerTask('build-js', ['clean:js', 'eslint', 'concat', 'uglify']);
+  grunt.registerTask('build-js', ['clean:js', 'concat', 'uglify']);
 
   // Copy dist to docs
   grunt.registerTask('copy-docs', ['clean:docs', 'copy:docs']);

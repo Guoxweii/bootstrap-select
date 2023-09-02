@@ -1,3 +1,6 @@
+import jQuery from "jquery";
+import * as bootstrap from 'bootstrap';
+
 (function ($) {
   'use strict';
 
@@ -627,7 +630,7 @@
     ARROW_DOWN: 40 // KeyboardEvent.which value for down arrow key
   };
 
-  var Dropdown = window.Dropdown || window.bootstrap && window.bootstrap.Dropdown;
+  var Dropdown = window.Dropdown || window.bootstrap && window.bootstrap.Dropdown || bootstrap.Dropdown;
 
   function getVersion () {
     var version;

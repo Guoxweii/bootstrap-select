@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, bootstrap) {
   'use strict';
 
   var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
@@ -627,7 +627,7 @@
     ARROW_DOWN: 40 // KeyboardEvent.which value for down arrow key
   };
 
-  var Dropdown = window.Dropdown || window.bootstrap && window.bootstrap.Dropdown;
+  var Dropdown = window.Dropdown || window.bootstrap && window.bootstrap.Dropdown || bootstrap.Dropdown;
 
   function getVersion () {
     var version;
@@ -3628,4 +3628,4 @@
       Plugin.call($selectpicker, $selectpicker.data());
     });
   });
-})(jQuery);
+})(jQuery, bootstrap);

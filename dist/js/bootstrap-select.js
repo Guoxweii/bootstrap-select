@@ -785,6 +785,7 @@
           // note: switch to span in next major release
           iconElement = (useFragment === true ? elementTemplates.i : elementTemplates.span).cloneNode(false);
           iconElement.className = this.options.iconBase + ' ' + options.icon;
+          iconElement.style = options.iconStyle;
 
           elementTemplates.fragment.appendChild(iconElement);
           elementTemplates.fragment.appendChild(whitespace);
@@ -820,6 +821,7 @@
 
         iconElement = elementTemplates.span.cloneNode(false);
         iconElement.className = this.options.iconBase + ' ' + options.icon;
+        iconElement.style = options.iconStyle;
 
         elementTemplates.fragment.appendChild(iconElement);
         elementTemplates.fragment.appendChild(whitespace);
@@ -1727,6 +1729,7 @@
           config.tokens = dataGetter(item, 'tokens');
           config.subtext = dataGetter(item, 'subtext');
           config.icon = dataGetter(item, 'icon');
+          config.iconStyle = dataGetter(item, 'iconStyle');
 
           config.display = config.content || config.text;
           config.value = item.value === undefined ? item.text : item.value;
@@ -1763,6 +1766,7 @@
               display: htmlEscape(dataGetter(item, 'label')),
               subtext: dataGetter(optgroup, 'subtext'),
               icon: dataGetter(optgroup, 'icon'),
+              iconStyle: dataGetter(optgroup, 'iconStyle'),
               type: 'optgroup-label',
               optgroupClass: ' ' + (optgroup.className || ''),
               optgroup: optgroup
@@ -2005,6 +2009,7 @@
                   } else {
                     if (that.options.showIcon) {
                       titleOptions.icon = option.icon;
+                      titleOptions.iconStyle = option.iconStyle;
                     }
                     if (that.options.showSubtext && !that.multiple && option.subtext) titleOptions.subtext = ' ' + option.subtext;
                     titleOptions.text = option.text.trim();
